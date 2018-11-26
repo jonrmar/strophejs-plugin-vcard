@@ -2,11 +2,13 @@
   "name": "strophejs-plugin-vcard",
   "version": "0.0.1",
   "description": "A strophe.js plugin which implements XEP-0054 VCard-temp",
-  "main": "strophe.vcard.js",
+  "main": "lib/strophe.vcard.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
+    "build": "rollup src/strophe.vcard.js -f umd -g strophe.js:window -o lib/strophe.vcard.js -m",
+    "prepublish": "npm run --silent build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/strophe/strophejs-plugin-vcard/issues"
   },
-  "homepage": "https://github.com/strophe/strophejs-plugin-vcard#readme"
+  "homepage": "https://github.com/strophe/strophejs-plugin-vcard#readme",
+  "devDependencies": {
+    "rollup": "^0.67.3"
+  },
+  "peerDependencies": {
+    "strophe.js": "^1.2.12"
+  }
 }

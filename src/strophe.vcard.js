@@ -4,32 +4,7 @@
  *  Author: Nathan Zorn (nathan.zorn@gmail.com)
  *  AMD support by JC Brand
  */
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define([
-            "strophe"
-        ], function (Strophe) {
-            factory(
-                Strophe.Strophe,
-                Strophe.$build,
-                Strophe.$iq ,
-                Strophe.$msg,
-                Strophe.$pres
-            );
-            return Strophe;
-        });
-    } else {
-        // Browser globals
-        factory(
-            root.Strophe,
-            root.$build,
-            root.$iq ,
-            root.$msg,
-            root.$pres
-        );
-    }
-}(this, function (Strophe, $build, $iq, $msg, $pres) {
+import { $iq, Strophe } from 'strophe.js';
 
     var buildIq = function(type, jid, vCardEl) {
         var iq = $iq(jid ? {type: type, to: jid} : {type: type});
@@ -67,4 +42,3 @@
             return this._connection.sendIQ(iq, handler_cb, error_cb);
         }
     });
-}));
