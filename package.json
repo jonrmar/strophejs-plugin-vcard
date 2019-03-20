@@ -31,6 +31,6 @@
     "rollup": "^0.67.3"
   },
   "peerDependencies": {
-    "strophe.js": "^1.2.12"
+    "strophe.js": "github:jonrmar/strophejs"
   }
 }
