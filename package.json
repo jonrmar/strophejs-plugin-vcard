@@ -2,7 +2,7 @@
   "name": "strophejs-plugin-vcard",
   "version": "0.0.1",
   "description": "A strophe.js plugin which implements XEP-0054 VCard-temp",
-  "main": "lib/strophe.vcard.js",
+  "main": "strophe.vcard.js",
   "directories": {
     "example": "examples"
   },
